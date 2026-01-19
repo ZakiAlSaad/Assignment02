@@ -598,6 +598,126 @@ body {
 }
 
 /* =========================================
+   8. FOOTER SECTION (UPDATED FOR 2x2 MOBILE LOOK)
+   ========================================= */
+
+.site-footer {
+    width: 100%;
+    background-color: #120d26;
+    
+    /* ব্যাকগ্রাউন্ড ইমেজ সেটআপ */
+    background-image: url('assets/footer-bg.png'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; 
+    
+    padding: 100px 20px 60px 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2; 
+}
+
+/* ফুটার লোগো */
+.footer-logo {
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin-bottom: 50px;
+    line-height: 1;
+}
+
+/* সোশ্যাল লিঙ্কস (ডেস্কটপ) */
+.footer-socials {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #b3b3b3;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.footer-link img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    opacity: 0.7;
+}
+
+.footer-link:hover { color: white; transform: translateY(-2px); }
+.footer-link:hover img { opacity: 1; }
+
+.copyright-text {
+    color: #666680;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE (FOOTER FIXED)
+   ========================================= */
+
+@media screen and (max-width: 576px) {
+    .site-footer {
+        padding: 60px 20px 40px 20px;
+        /* মোবাইলে ওয়েভগুলো যাতে টেক্সটের পেছনে দেখা যায় */
+        background-size: 200%; /* জুম করা হলো যাতে ওয়েভগুলো পাশে দেখা যায় */
+        background-position: center bottom;
+    }
+
+    .footer-logo {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+
+    /* --- এখানে পরিবর্তন করা হয়েছে --- */
+    .footer-socials {
+        display: flex;
+        flex-direction: row; /* পাশাপাশি থাকবে */
+        flex-wrap: wrap;     /* জায়গা না হলে নিচে নামবে */
+        justify-content: center;
+        
+        /* গ্যাপ এডজাস্টমেন্ট: উপরে-নিচে ১৫, ডানে-বামে ২৫ */
+        gap: 15px 25px;      
+        
+        margin-bottom: 40px;
+        max-width: 350px; /* যাতে ২টার বেশি এক লাইনে না থাকে */
+    }
+    
+    .footer-link {
+        font-size: 14px;
+        /* আইকন এবং টেক্সট একটু ছোট */
+    }
+    
+    .footer-link img {
+        width: 20px;
+        height: 20px;
+    }
+}
+/* =========================================
    MOBILE RESPONSIVE (FEATURES)
    ========================================= */
 
