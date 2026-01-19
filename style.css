@@ -1,5 +1,5 @@
 /* =========================================
-   1. GLOBAL RESET & FONTS
+   1. GLOBAL RESET & BASIC STYLES
    ========================================= */
 * {
     margin: 0;
@@ -9,13 +9,13 @@
 }
 
 body {
-    background-color: #120d26; /* Deep Purple Background */
+    background-color: #120d26; /* Dark Purple Background */
     color: white;
     overflow-x: hidden; /* Prevents horizontal scroll */
 }
 
 /* =========================================
-   2. NAVIGATION BAR (DESKTOP)
+   2. NAVIGATION BAR
    ========================================= */
 .navbar {
     display: flex;
@@ -34,7 +34,7 @@ body {
     font-size: 28px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    z-index: 101;
+    z-index: 101; /* Keeps logo above mobile menu */
     display: flex;
     align-items: center;
 }
@@ -48,7 +48,7 @@ body {
     color: transparent;
 }
 
-/* --- Menu Wrapper --- */
+/* --- Menu Links Wrapper --- */
 .menu-items {
     display: flex;
     align-items: center;
@@ -56,11 +56,13 @@ body {
     flex-grow: 1;
 }
 
-/* --- Central Links --- */
+/* --- Links (About, Episodes, Host) --- */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 32px;
+    
+    /* Center the links absolutely */
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -76,7 +78,7 @@ body {
 
 .nav-links li a:hover { color: #ffffff; }
 
-/* --- Navbar Subscribe Button --- */
+/* --- Subscribe Button --- */
 .btn-subscribe {
     display: flex;
     align-items: center;
@@ -94,13 +96,13 @@ body {
 
 .btn-subscribe:hover { transform: translateY(-1px); }
 
-/* --- Hidden Elements --- */
+/* --- Hidden Elements (Mobile) --- */
 #menu-toggle { display: none; }
 .hamburger-lines { display: none; }
 
 
 /* =========================================
-   3. HERO SECTION (EXACT MATCH)
+   3. HERO SECTION
    ========================================= */
 .hero-section {
     display: flex;
@@ -108,12 +110,11 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    
     width: 100%;
     padding: 60px 20px 100px 20px; 
     
-    /* Background Wave Image Setup */
-    background-image: url('./assets/hero-bg.png');
+    /* Background Wave Image */
+    background-image: url('assets/hero-bg.png');
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center 150px; 
@@ -121,19 +122,19 @@ body {
     margin-top: 0;
 }
 
-/* --- Image Wrapper (Large Size) --- */
+/* --- Hero Image Wrapper --- */
 .hero-image-wrapper {
     position: relative;
-    width: 440px; /* Large circle size to bridge waves */
+    width: 440px; /* Large size */
     height: 440px;
-    margin-bottom: 35px; /* Spacing below circle */
-    top: 50%;
+    margin-bottom: 35px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Background Circle Image */
+/* Circle Background */
 .hero-bg-circle {
     width: 100%;
     height: 100%;
@@ -143,13 +144,13 @@ body {
     left: 0;
 }
 
-/* Microphone Image (Balanced Size based on image) */
+/* Microphone Image */
 .hero-mic {
     position: absolute;
-    width: 180px; /* Adjusted size to match the reference image */
+    width: 180px; 
     height: auto;
     
-    /* Perfect Centering */
+    /* Center positioning */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -162,7 +163,6 @@ body {
     position: absolute;
     top: 40px;
     right: 40px;
-    
     background-color: #00ff9d;
     color: #120d26;
     font-size: 14px;
@@ -173,12 +173,12 @@ body {
     z-index: 3;
 }
 
-/* --- Hero Text Styles --- */
+/* --- Hero Texts --- */
 .hero-title {
     font-size: 56px;
     font-weight: 700;
     color: white;
-    margin: 0 0 15px 0; /* Spacing below title */
+    margin: 0 0 15px 0;
     letter-spacing: -1px;
     line-height: 1.1;
 }
@@ -189,11 +189,10 @@ body {
     font-weight: 400;
     max-width: 600px;
     line-height: 1.6;
-    /* Spacing increased slightly to match image */
     margin: 0 0 50px 0; 
 }
 
-/* --- Hero Buttons Group --- */
+/* --- Hero Buttons --- */
 .hero-buttons {
     display: flex;
     gap: 20px;
@@ -220,7 +219,7 @@ body {
     box-shadow: 0 5px 15px rgba(255, 0, 204, 0.4);
 }
 
-/* Subscribe Outline Button */
+/* Subscribe Button (Outline) */
 .btn-email-sub {
     display: flex;
     align-items: center;
@@ -240,24 +239,22 @@ body {
     background: rgba(0, 255, 157, 0.1);
 }
 
-/* =========================================
-   5. ABOUT SECTION
-   ========================================= */
 
+/* =========================================
+   4. ABOUT SECTION
+   ========================================= */
 .about-section {
     width: 100%;
-    background-color: #120d26; /* বডি কালারের সাথে মিল রেখে */
-    padding: 80px 20px; /* উপরে নিচে যথেষ্ট জায়গা */
+    background-color: #120d26;
+    padding: 80px 20px;
     text-align: center;
 }
 
-/* কন্টেন্ট যেন খুব বেশি ছড়িয়ে না যায় তার জন্য কন্টেইনার */
 .about-container {
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* সেকশন টাইটেল */
 .section-title {
     font-size: 36px;
     font-weight: 700;
@@ -265,55 +262,52 @@ body {
     margin-bottom: 30px;
 }
 
-/* প্যারাগ্রাফ স্টাইল */
 .about-text p {
-    color: #b3b3b3; /* হালকা ছাই রঙ */
+    color: #b3b3b3;
     font-size: 16px;
-    line-height: 1.8; /* পড়ার সুবিধার জন্য লাইনের ফাঁকা */
+    line-height: 1.8;
     margin-bottom: 15px;
 }
 
-/* হালকা দাগ (Divider Line) */
+/* Divider Line */
 .divider-line {
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.1); /* খুব হালকা সাদা */
+    background-color: rgba(255, 255, 255, 0.1);
     width: 100%;
-    margin: 60px 0; /* টেক্সট ও স্ট্যাটাস এর মাঝখানে গ্যাপ */
+    margin: 60px 0;
 }
 
-/* স্ট্যাটাস গ্রিড (Stats) */
+/* Stats Grid Layout */
 .stats-grid {
     display: flex;
-    justify-content: space-between; /* চারটা আইটেম সমান দূরত্বে থাকবে */
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* ছোট স্ক্রিনে নিচে নেমে যাবে */
+    flex-wrap: wrap;
 }
 
 .stat-item {
     text-align: center;
 }
 
-/* বড় সবুজ নাম্বার */
 .stat-number {
-    font-size: 48px; /* ইমেজের মতো বড় ফন্ট */
+    font-size: 48px;
     font-weight: 800;
-    color: #00ff9d; /* সেইম নিওন গ্রিন কালার */
+    color: #00ff9d; /* Neon Green */
     margin-bottom: 10px;
 }
 
-/* নিচের ছোট লেখা */
 .stat-label {
     color: #e6e6e6;
     font-size: 14px;
-    text-transform: uppercase; /* সব বড় হাতের অক্ষর */
+    text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
 }
 
-/* =========================================
-   6. FEATURES SECTION (Bento Grid)
-   ========================================= */
 
+/* =========================================
+   5. FEATURES SECTION (Bento Grid)
+   ========================================= */
 .features-section {
     width: 100%;
     background-color: #120d26;
@@ -321,24 +315,22 @@ body {
 }
 
 .features-container {
-    max-width: 1100px; /* কনটেইনার একটু চওড়া */
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-/* --- Grid Layout Setup --- */
+/* Grid Layout */
 .bento-grid {
     display: grid;
-    /* ৩টি সমান কলাম তৈরি করা হলো */
-    grid-template-columns: repeat(3, 1fr);
-    /* আইটেমগুলোর মাঝখানে গ্যাপ */
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns */
     gap: 24px; 
     margin-top: 40px;
 }
 
-/* --- Card Basic Styles --- */
+/* Card Styles */
 .feature-card {
-    background-color: #1e123b; /* বডির চেয়ে হালকা পার্পল */
-    border-radius: 24px; /* রাউন্ডেড কর্নার */
+    background-color: #1e123b;
+    border-radius: 24px;
     padding: 40px 30px;
     display: flex;
     flex-direction: column;
@@ -347,18 +339,15 @@ body {
 }
 
 .feature-card:hover {
-    transform: translateY(-5px); /* হোভার করলে একটু উপরে উঠবে */
+    transform: translateY(-5px);
 }
 
-/* --- Icon Styles --- */
 .icon-box svg {
     width: 40px;
     height: 40px;
     margin-bottom: 20px;
-    /* স্ট্রোক কালার SVG এর ভেতরে url দিয়ে সেট করা আছে */
 }
 
-/* --- Typography --- */
 .feature-card h3 {
     color: white;
     font-size: 20px;
@@ -372,47 +361,24 @@ body {
     line-height: 1.6;
 }
 
+/* Grid Placement Logic (Desktop) */
+.card-audio { grid-column: 1 / 2; grid-row: 1 / 3; justify-content: center; }
+.card-mobile { grid-column: 2 / 4; }
+.card-global { grid-column: 2 / 4; }
+.card-exclusive { grid-column: 1 / 3; }
+.card-resource { grid-column: 3 / 4; }
+
+
 /* =========================================
-   GRID PLACEMENT (Bento Layout Logic)
+   6. EPISODES & HOST SECTIONS
    ========================================= */
-
-/* ১. অডিও কার্ড (বামে, লম্বা - ২ কলাম জায়গা নিবে না, কিন্তু ২ রো হাইট হবে) */
-.card-audio {
-    grid-column: 1 / 2; /* ১ নাম্বার কলাম */
-    grid-row: 1 / 3;    /* ১ থেকে ৩ পর্যন্ত রো (লম্বা হবে) */
-    justify-content: center; /* কন্টেন্ট মাঝখানে */
-}
-
-/* ২. মোবাইল কার্ড (উপরে ডানে - ২ কলাম জায়গা নিবে) */
-.card-mobile {
-    grid-column: 2 / 4; /* ২ থেকে ৪ পর্যন্ত কলাম */
-}
-
-/* ৩. গ্লোবাল কার্ড (মাঝখানে ডানে - ২ কলাম জায়গা নিবে) */
-.card-global {
-    grid-column: 2 / 4; /* ২ থেকে ৪ পর্যন্ত কলাম */
-}
-
-/* ৪. এক্সক্লুসিভ কার্ড (নিচে বামে - ২ কলাম জায়গা নিবে) */
-.card-exclusive {
-    grid-column: 1 / 3; /* ১ থেকে ৩ পর্যন্ত কলাম */
-}
-
-/* ৫. রিসোর্স কার্ড (নিচে ডানে - ১ কলাম জায়গা নিবে) */
-.card-resource {
-    grid-column: 3 / 4; /* ৩ থেকে ৪ পর্যন্ত কলাম */
-}
-/* =========================================
-   7. EPISODES & HOST SECTIONS (UPDATED)
-   ========================================= */
-
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* --- Episodes Section --- */
+/* --- Episodes --- */
 .episodes-section {
     background-color: #120d26;
     padding: 60px 0 100px 0;
@@ -433,9 +399,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-.episode-card:hover {
-    transform: translateY(-5px);
-}
+.episode-card:hover { transform: translateY(-5px); }
 
 .episode-image {
     position: relative;
@@ -449,7 +413,7 @@ body {
     object-fit: cover;
 }
 
-/* Play Button Container */
+/* Play Button */
 .play-btn {
     position: absolute;
     top: 50%;
@@ -466,16 +430,13 @@ body {
     transition: transform 0.2s;
 }
 
-/* Play Icon Image Style */
 .play-btn img {
-    width: 20px !important; /* !important used to override general img rule */
-    height: 20px !important;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
 }
 
-.play-btn:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-}
+.play-btn:hover { transform: translate(-50%, -50%) scale(1.1); }
 
 .episode-content {
     padding: 25px;
@@ -498,25 +459,23 @@ body {
     flex-grow: 1;
 }
 
-/* Time & Icon */
 .episode-meta {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #00ff9d; /* Text color */
+    color: #00ff9d;
     font-size: 13px;
     font-weight: 600;
     margin-top: 10px;
 }
 
-/* Clock Icon Image Style */
 .episode-meta img {
     width: 16px;
     height: 16px;
     object-fit: contain;
 }
 
-/* --- Host Section --- */
+/* --- Host --- */
 .host-section {
     background-color: #120d26;
     padding-bottom: 100px;
@@ -531,9 +490,7 @@ body {
     gap: 50px;
 }
 
-.host-img-wrapper {
-    flex-shrink: 0;
-}
+.host-img-wrapper { flex-shrink: 0; }
 
 .host-img {
     width: 180px;
@@ -557,10 +514,7 @@ body {
     margin-bottom: 25px;
 }
 
-.host-socials {
-    display: flex;
-    gap: 15px;
-}
+.host-socials { display: flex; gap: 15px; }
 
 .social-icon {
     width: 40px;
@@ -573,7 +527,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Social Icon Image Style */
 .social-icon img {
     width: 18px;
     height: 18px;
@@ -585,27 +538,14 @@ body {
     border-color: #d438f0;
 }
 
-/* রেসপন্সিভ কোড আগের মতোই থাকবে */
-@media screen and (max-width: 900px) {
-    .episodes-grid { grid-template-columns: repeat(2, 1fr); }
-    .host-card { padding: 40px; gap: 30px; }
-}
-
-@media screen and (max-width: 650px) {
-    .episodes-grid { grid-template-columns: 1fr; }
-    .host-card { flex-direction: column; text-align: center; padding: 30px; }
-    .host-socials { justify-content: center; }
-}
 
 /* =========================================
-   8. FOOTER SECTION (UPDATED FOR 2x2 MOBILE LOOK)
+   7. FOOTER SECTION
    ========================================= */
-
 .site-footer {
     width: 100%;
     background-color: #120d26;
     
-    /* ব্যাকগ্রাউন্ড ইমেজ সেটআপ */
     background-image: url('assets/footer-bg.png'); 
     background-repeat: no-repeat;
     background-position: center center;
@@ -630,7 +570,6 @@ body {
     z-index: 2; 
 }
 
-/* ফুটার লোগো */
 .footer-logo {
     font-size: 64px;
     font-weight: 700;
@@ -639,7 +578,6 @@ body {
     line-height: 1;
 }
 
-/* সোশ্যাল লিঙ্কস (ডেস্কটপ) */
 .footer-socials {
     display: flex;
     gap: 48px;
@@ -676,160 +614,33 @@ body {
 }
 
 
-/* =========================================
-   MOBILE RESPONSIVE (FOOTER FIXED)
-   ========================================= */
+/* =======================================================
+   8. MOBILE RESPONSIVE (MEDIA QUERIES)
+   ======================================================= */
 
-@media screen and (max-width: 576px) {
-    .site-footer {
-        padding: 60px 20px 40px 20px;
-        /* মোবাইলে ওয়েভগুলো যাতে টেক্সটের পেছনে দেখা যায় */
-        background-size: 200%; /* জুম করা হলো যাতে ওয়েভগুলো পাশে দেখা যায় */
-        background-position: center bottom;
-    }
-
-    .footer-logo {
-        font-size: 42px;
-        margin-bottom: 30px;
-    }
-
-    /* --- এখানে পরিবর্তন করা হয়েছে --- */
-    .footer-socials {
-        display: flex;
-        flex-direction: row; /* পাশাপাশি থাকবে */
-        flex-wrap: wrap;     /* জায়গা না হলে নিচে নামবে */
-        justify-content: center;
-        
-        /* গ্যাপ এডজাস্টমেন্ট: উপরে-নিচে ১৫, ডানে-বামে ২৫ */
-        gap: 15px 25px;      
-        
-        margin-bottom: 40px;
-        max-width: 350px; /* যাতে ২টার বেশি এক লাইনে না থাকে */
-    }
-    
-    .footer-link {
-        font-size: 14px;
-        /* আইকন এবং টেক্সট একটু ছোট */
-    }
-    
-    .footer-link img {
-        width: 20px;
-        height: 20px;
-    }
-}
-/* =========================================
-   MOBILE RESPONSIVE (FEATURES)
-   ========================================= */
-
+/* --- Tablet View (Max Width 900px) --- */
 @media screen and (max-width: 900px) {
-    /* ট্যাবলেটে গ্রিড ২ কলাম করা যেতে পারে */
-    .bento-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+    /* Features: 2 Columns */
+    .bento-grid { grid-template-columns: 1fr 1fr; }
     
-    /* লেআউট রিসেট */
+    /* Reset Grid Placements */
     .card-audio { grid-column: span 1; grid-row: span 1; }
     .card-mobile { grid-column: span 1; }
-    .card-global { grid-column: span 2; } /* এটা চওড়া থাকবে */
+    .card-global { grid-column: span 2; }
     .card-exclusive { grid-column: span 2; }
     .card-resource { grid-column: span 2; }
-}
 
-@media screen and (max-width: 576px) {
-    /* মোবাইলে সব ১টি কলামে নিচে নিচে আসবে */
-    .bento-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    /* মোবাইলে সব গ্রিড পজিশন বাতিল */
-    .card-audio, .card-mobile, .card-global, .card-exclusive, .card-resource {
-        grid-column: auto;
-        grid-row: auto;
-    }
-
-    .feature-card {
-        padding: 30px 20px;
-    }
-}
-
-/* =========================================
-   MOBILE RESPONSIVE (ABOUT SECTION UPDATE)
-   ========================================= */
-
-@media screen and (max-width: 576px) {
-    /* About Section প্যাডিং কমানো */
-    .about-section {
-        padding: 50px 20px;
-    }
-
-    /* টাইটেল ফন্ট সাইজ */
-    .section-title {
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
+    /* Episodes: 2 Columns */
+    .episodes-grid { grid-template-columns: repeat(2, 1fr); }
     
-    /* প্যারাগ্রাফ টেক্সট একটু ছোট করা */
-    .about-text p {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    /* ডিভাইডার গ্যাপ কমানো */
-    .divider-line {
-        margin: 40px 0;
-    }
-
-    /* --- Stats Grid (2 Columns Layout) --- */
-    .stats-grid {
-        display: flex;
-        flex-wrap: wrap; /* লাইন ব্রেক করার জন্য */
-        justify-content: center; /* মাঝখানে রাখার জন্য */
-        gap: 20px; /* আইটেমগুলোর মাঝখানে গ্যাপ */
-    }
-
-    .stat-item {
-        /* ২টা আইটেম পাশাপাশি রাখার জন্য প্রস্থ ৪৬% (গ্যাপ সহ ১০০% হবে) */
-        width: 46%; 
-        margin-bottom: 10px;
-    }
-
-    /* মোবাইলে নাম্বার সাইজ একটু ছোট করা যাতে ভেঙে না যায় */
-    .stat-number {
-        font-size: 32px; 
-        margin-bottom: 5px;
-    }
-
-    /* লেবেল ফন্ট সাইজ */
-    .stat-label {
-        font-size: 11px; /* টেক্সট যেন এক লাইনে থাকে */
-        letter-spacing: 0.5px;
-    }
-    
-    /* স্টার আইকন সাইজ এডজাস্টমেন্ট */
-    .stat-number svg {
-        width: 20px;
-        height: 20px;
-    }
-}
-/* =========================================
-   4. MOBILE RESPONSIVE (Max-width: 768px & 576px)
-   ========================================= */
-
-/* Tablet View */
-@media screen and (max-width: 768px) {
-    .hero-image-wrapper {
-        width: 400px;
-        height: 400px;
-    }
-    .hero-mic { width: 130px; } 
-    .badge-new { top: 30px; right: 30px; }
-    .hero-section { background-position: center 100px; }
+    /* Host */
+    .host-card { padding: 40px; gap: 30px; }
 }
 
-/* Mobile View (< 576px) */
+/* --- Mobile View (Max Width 576px) --- */
 @media screen and (max-width: 576px) {
-
+    
+    /* Navigation: Mobile Menu Styles */
     .navbar { padding: 15px 20px; height: 70px; }
 
     .hamburger-lines {
@@ -852,11 +663,13 @@ body {
     }
     .nav-links li a { font-size: 20px; }
 
+    /* Hamburger Animation Logic */
     #menu-toggle:checked ~ .menu-items { transform: translateY(0); }
     #menu-toggle:checked ~ .hamburger-lines .line1 { transform: rotate(45deg); transform-origin: 0% 0%; }
     #menu-toggle:checked ~ .hamburger-lines .line2 { transform: scaleY(0); }
     #menu-toggle:checked ~ .hamburger-lines .line3 { transform: rotate(-45deg); transform-origin: 0% 100%; }
 
+    /* Hero Section */
     .hero-section { padding: 40px 20px; background-position: center 80px; }
     .hero-image-wrapper { width: 280px; height: 280px; }
     .hero-mic { width: 90px; }
@@ -864,4 +677,44 @@ body {
     .hero-title { font-size: 32px; }
     .hero-buttons { flex-direction: column; width: 100%; }
     .btn-spotify, .btn-email-sub { width: 100%; justify-content: center; }
+
+    /* About Section */
+    .about-section { padding: 50px 20px; }
+    .section-title { font-size: 28px; margin-bottom: 20px; }
+    .about-text p { font-size: 14px; line-height: 1.6; }
+    .divider-line { margin: 40px 0; }
+    
+    /* Stats Grid (2x2 Layout) */
+    .stats-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .stat-item { width: 46%; margin-bottom: 10px; }
+    .stat-number { font-size: 32px; margin-bottom: 5px; }
+    .stat-label { font-size: 11px; letter-spacing: 0.5px; }
+    .stat-number svg { width: 20px; height: 20px; }
+
+    /* Features Section */
+    .bento-grid { grid-template-columns: 1fr; gap: 20px; }
+    .card-audio, .card-mobile, .card-global, .card-exclusive, .card-resource {
+        grid-column: auto; grid-row: auto;
+    }
+    .feature-card { padding: 30px 20px; }
+
+    /* Episodes & Host */
+    .episodes-grid { grid-template-columns: 1fr; }
+    .host-card { flex-direction: column; text-align: center; padding: 30px; }
+    .host-socials { justify-content: center; }
+
+    /* Footer (2x2 Grid) */
+    .site-footer {
+        padding: 60px 20px 40px 20px;
+        background-size: 200%;
+        background-position: center bottom;
+    }
+    .footer-logo { font-size: 42px; margin-bottom: 30px; }
+    
+    .footer-socials {
+        display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;
+        gap: 15px 25px; margin-bottom: 40px; max-width: 350px;
+    }
+    .footer-link { font-size: 14px; }
+    .footer-link img { width: 20px; height: 20px; }
 }
