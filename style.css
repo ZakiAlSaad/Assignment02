@@ -117,7 +117,7 @@ body {
     background-image: url('assets/hero-bg.png');
     background-repeat: no-repeat;
     background-size: cover; 
-    background-position: center 150px; 
+    background-position: center 5px; 
     
     margin-top: 0;
 }
@@ -670,7 +670,7 @@ body {
     #menu-toggle:checked ~ .hamburger-lines .line3 { transform: rotate(-45deg); transform-origin: 0% 100%; }
 
     /* Hero Section */
-    .hero-section { padding: 40px 20px; background-position: center 80px; }
+    .hero-section { padding: 40px 20px; background-position: center 1px; }
     .hero-image-wrapper { width: 280px; height: 280px; }
     .hero-mic { width: 90px; }
     .badge-new { top: 20px; right: 20px; font-size: 12px; }
