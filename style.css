@@ -2,35 +2,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
- 
-body {
-    background-color: #120d26; 
     font-family: 'Inter', sans-serif;
-    display: flex;
-    justify-content: center;
-    padding-top: 40px;
 }
- 
-.navbar-container {
-    width: 100%;
-    padding: 15px 50px; 
+
+body {
+    background-color: #120d26;
+}
+
+/* Main Navigation Bar */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 40px; /* Controlled by height */
+    background-color: #120d26;
+    height: 90px;
+    width: 100%;
+    position: relative; /* Needed for absolute positioning of children */
+    z-index: 10;
 }
 
+/* Logo Styles */
 .logo {
     font-size: 28px;
-    font-weight: 700; 
+    font-weight: 700;
     letter-spacing: -0.5px;
-    user-select: none;
+    z-index: 15; /* Keeps logo above mobile menu overlay */
 }
 
-.text-white {
-    color: #ffffff;
-}
-
+.text-white { color: #ffffff; }
 
 .text-gradient {
     background: linear-gradient(90deg, #ff9e65 0%, #d438f0 100%);
@@ -39,49 +39,134 @@ body {
     color: transparent;
 }
 
-
-.nav-menu {
+/*  Desktop Layout Container */
+.menu-items {
     display: flex;
-    gap: 40px; 
-    margin-left: 60px; 
+    align-items: center;
+    /* Pushes the button to the far right */
+    justify-content: flex-end; 
+    flex-grow: 1; 
 }
 
-.nav-menu a {
+/* Center Menu Links (About, Episodes, Host) */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    
+    /* Absolute positioning to ensure exact center alignment */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links li a {
     text-decoration: none;
-    color: #e6e6e6; 
+    color: #e6e6e6;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     transition: color 0.2s;
 }
 
-.nav-menu a:hover {
-    color: #ffffff;
-}
+.nav-links li a:hover { color: #ffffff; }
 
-
+/*  Subscribe Button */
 .btn-subscribe {
     display: flex;
     align-items: center;
-    gap: 8px; 
-    
-    
+    gap: 8px;
     background: linear-gradient(90deg, #ffd040 0%, #ff3ea5 50%, #9b30ff 100%);
-    
     color: white;
     text-decoration: none;
     font-weight: 600;
-    font-size: 15px;
     padding: 10px 24px;
-    border-radius: 999px; 
-    transition: transform 0.2s, opacity 0.2s;
+    border-radius: 999px;
+    transition: transform 0.2s;
+    z-index: 15;
 }
 
-.btn-subscribe:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-}
+.btn-subscribe:hover { transform: translateY(-1px); }
+
+/* Hide Checkbox & Hamburger on Desktop */
+#menu-toggle { display: none; }
+.hamburger-lines { display: none; }
 
 
-.btn-subscribe svg {
-    display: block;
+/* Mobile Responsive Styles (Max-width: 576px) */
+@media screen and (max-width: 576px) {
+
+    .navbar {
+        padding: 15px 20px;
+        height: 70px;
+    }
+
+    /* Hamburger Icon Styles */
+    .hamburger-lines {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 24px;
+        width: 30px;
+        z-index: 20; /* Ensure it stays above the menu overlay */
+        cursor: pointer;
+    }
+
+    .hamburger-lines .line {
+        display: block;
+        height: 3px;
+        width: 100%;
+        border-radius: 10px;
+        background: #cfcfcf;
+    }
+
+    /* Mobile Menu Overlay */
+    .menu-items {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: #120d26;
+        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        /* Animation properties */
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 10;
+    }
+
+    /* Resetting Desktop Positioning for Mobile */
+    .nav-links {
+        position: static; /* Remove absolute positioning */
+        transform: none;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 30px;
+        align-items: center;
+    }
+    
+    .nav-links li a {
+        font-size: 20px; /* Larger font for mobile */
+    }
+
+    /* Show Menu when Checkbox is Checked */
+    #menu-toggle:checked ~ .menu-items {
+        transform: translateY(0);
+    }
+
+    /* Hamburger to Cross Animation */
+    #menu-toggle:checked ~ .hamburger-lines .line1 {
+        transform: rotate(45deg);
+        transform-origin: 0% 0%;
+    }
+    #menu-toggle:checked ~ .hamburger-lines .line2 {
+        transform: scaleY(0);
+    }
+    #menu-toggle:checked ~ .hamburger-lines .line3 {
+        transform: rotate(-45deg);
+        transform-origin: 0% 100%;
+    }
 }

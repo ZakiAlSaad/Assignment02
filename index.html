@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechWave</title>
+    <title>TechWave Mobile</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar-container">
+    <nav class="navbar">
         <div class="logo">
             <span class="text-white">Tech</span><span class="text-gradient">Wave</span>
         </div>
 
-        <div class="nav-menu">
-            <a href="#">About</a>
-            <a href="#">Episodes</a>
-            <a href="#">Host</a>
-        </div>
+        <input type="checkbox" id="menu-toggle">
 
-        <div class="nav-action">
+        <label for="menu-toggle" class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </label>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Episodes</a></li>
+                <li><a href="#">Host</a></li>
+            </ul>
+            
             <a href="#" class="btn-subscribe">
                 Subscribe 
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
