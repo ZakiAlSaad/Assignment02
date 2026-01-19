@@ -124,10 +124,10 @@ body {
 /* --- Image Wrapper (Large Size) --- */
 .hero-image-wrapper {
     position: relative;
-    width: 550px; /* Large circle size to bridge waves */
-    height: 550px;
+    width: 440px; /* Large circle size to bridge waves */
+    height: 440px;
     margin-bottom: 35px; /* Spacing below circle */
-    
+    top: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -240,7 +240,136 @@ body {
     background: rgba(0, 255, 157, 0.1);
 }
 
+/* =========================================
+   5. ABOUT SECTION
+   ========================================= */
 
+.about-section {
+    width: 100%;
+    background-color: #120d26; /* বডি কালারের সাথে মিল রেখে */
+    padding: 80px 20px; /* উপরে নিচে যথেষ্ট জায়গা */
+    text-align: center;
+}
+
+/* কন্টেন্ট যেন খুব বেশি ছড়িয়ে না যায় তার জন্য কন্টেইনার */
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* সেকশন টাইটেল */
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* প্যারাগ্রাফ স্টাইল */
+.about-text p {
+    color: #b3b3b3; /* হালকা ছাই রঙ */
+    font-size: 16px;
+    line-height: 1.8; /* পড়ার সুবিধার জন্য লাইনের ফাঁকা */
+    margin-bottom: 15px;
+}
+
+/* হালকা দাগ (Divider Line) */
+.divider-line {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1); /* খুব হালকা সাদা */
+    width: 100%;
+    margin: 60px 0; /* টেক্সট ও স্ট্যাটাস এর মাঝখানে গ্যাপ */
+}
+
+/* স্ট্যাটাস গ্রিড (Stats) */
+.stats-grid {
+    display: flex;
+    justify-content: space-between; /* চারটা আইটেম সমান দূরত্বে থাকবে */
+    align-items: center;
+    flex-wrap: wrap; /* ছোট স্ক্রিনে নিচে নেমে যাবে */
+}
+
+.stat-item {
+    text-align: center;
+}
+
+/* বড় সবুজ নাম্বার */
+.stat-number {
+    font-size: 48px; /* ইমেজের মতো বড় ফন্ট */
+    font-weight: 800;
+    color: #00ff9d; /* সেইম নিওন গ্রিন কালার */
+    margin-bottom: 10px;
+}
+
+/* নিচের ছোট লেখা */
+.stat-label {
+    color: #e6e6e6;
+    font-size: 14px;
+    text-transform: uppercase; /* সব বড় হাতের অক্ষর */
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE (ABOUT SECTION UPDATE)
+   ========================================= */
+
+@media screen and (max-width: 576px) {
+    /* About Section প্যাডিং কমানো */
+    .about-section {
+        padding: 50px 20px;
+    }
+
+    /* টাইটেল ফন্ট সাইজ */
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    
+    /* প্যারাগ্রাফ টেক্সট একটু ছোট করা */
+    .about-text p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* ডিভাইডার গ্যাপ কমানো */
+    .divider-line {
+        margin: 40px 0;
+    }
+
+    /* --- Stats Grid (2 Columns Layout) --- */
+    .stats-grid {
+        display: flex;
+        flex-wrap: wrap; /* লাইন ব্রেক করার জন্য */
+        justify-content: center; /* মাঝখানে রাখার জন্য */
+        gap: 20px; /* আইটেমগুলোর মাঝখানে গ্যাপ */
+    }
+
+    .stat-item {
+        /* ২টা আইটেম পাশাপাশি রাখার জন্য প্রস্থ ৪৬% (গ্যাপ সহ ১০০% হবে) */
+        width: 46%; 
+        margin-bottom: 10px;
+    }
+
+    /* মোবাইলে নাম্বার সাইজ একটু ছোট করা যাতে ভেঙে না যায় */
+    .stat-number {
+        font-size: 32px; 
+        margin-bottom: 5px;
+    }
+
+    /* লেবেল ফন্ট সাইজ */
+    .stat-label {
+        font-size: 11px; /* টেক্সট যেন এক লাইনে থাকে */
+        letter-spacing: 0.5px;
+    }
+    
+    /* স্টার আইকন সাইজ এডজাস্টমেন্ট */
+    .stat-number svg {
+        width: 20px;
+        height: 20px;
+    }
+}
 /* =========================================
    4. MOBILE RESPONSIVE (Max-width: 768px & 576px)
    ========================================= */
