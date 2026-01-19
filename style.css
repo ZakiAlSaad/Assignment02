@@ -402,7 +402,200 @@ body {
 .card-resource {
     grid-column: 3 / 4; /* ৩ থেকে ৪ পর্যন্ত কলাম */
 }
+/* =========================================
+   7. EPISODES & HOST SECTIONS (UPDATED)
+   ========================================= */
 
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Episodes Section --- */
+.episodes-section {
+    background-color: #120d26;
+    padding: 60px 0 100px 0;
+}
+
+.episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.episode-card {
+    background-color: #1e123b;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.episode-card:hover {
+    transform: translateY(-5px);
+}
+
+.episode-image {
+    position: relative;
+    width: 100%;
+    height: 180px;
+}
+
+.episode-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Play Button Container */
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffc837, #ff00cc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(255, 0, 204, 0.4);
+    transition: transform 0.2s;
+}
+
+/* Play Icon Image Style */
+.play-btn img {
+    width: 20px !important; /* !important used to override general img rule */
+    height: 20px !important;
+    object-fit: contain;
+}
+
+.play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.episode-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.episode-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.4;
+}
+
+.episode-content p {
+    font-size: 14px;
+    color: #b3b3b3;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Time & Icon */
+.episode-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #00ff9d; /* Text color */
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Clock Icon Image Style */
+.episode-meta img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* --- Host Section --- */
+.host-section {
+    background-color: #120d26;
+    padding-bottom: 100px;
+}
+
+.host-card {
+    background-color: #1e123b;
+    border-radius: 30px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.host-img-wrapper {
+    flex-shrink: 0;
+}
+
+.host-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #120d26;
+}
+
+.host-info h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.host-bio {
+    color: #b3b3b3;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.host-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Social Icon Image Style */
+.social-icon img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.social-icon:hover {
+    background-color: #d438f0;
+    border-color: #d438f0;
+}
+
+/* রেসপন্সিভ কোড আগের মতোই থাকবে */
+@media screen and (max-width: 900px) {
+    .episodes-grid { grid-template-columns: repeat(2, 1fr); }
+    .host-card { padding: 40px; gap: 30px; }
+}
+
+@media screen and (max-width: 650px) {
+    .episodes-grid { grid-template-columns: 1fr; }
+    .host-card { flex-direction: column; text-align: center; padding: 30px; }
+    .host-socials { justify-content: center; }
+}
 
 /* =========================================
    MOBILE RESPONSIVE (FEATURES)
