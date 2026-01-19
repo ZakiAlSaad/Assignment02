@@ -113,7 +113,7 @@ body {
     padding: 60px 20px 100px 20px; 
     
     /* Background Wave Image Setup */
-    background-image: url('/assets/hero-bg.png');
+    background-image: url('./assets/hero-bg.png');
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center 150px; 
